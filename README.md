@@ -31,6 +31,13 @@ Further debugging
   then launch from the command line:
   `/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine`
 
+- To see how dynamic lib links are broken,
+
+  `otool -L /Users/bt/Library/Developer/Xcode/DerivedData/WanikaniSaver-{hash}/Build/Products/Debug/WanikaniSaver.saver/Contents/MacOS/WanikaniSaver`
+
+- You can move the `Alamofire.framework` lib dir into the
+  `WanikaniSaver.server/Contents/Frameworks` dir until a longer term fix is found.
+
 License
 -------
 **BSD 4-clause**
