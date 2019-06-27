@@ -40,6 +40,7 @@ public final class WanikaniSaverView : ScreenSaverView {
     
     public override var animationTimeInterval: TimeInterval {
         get {
+            //return 1 / 60
             return 1 / 60
         }
         
@@ -48,6 +49,8 @@ public final class WanikaniSaverView : ScreenSaverView {
     
     public override func draw(_ rect: NSRect) {
         clearBackground(color: NSColor.white)
+        
+        WanikaniApi.init().update()
         
         let center = getCenter()
         

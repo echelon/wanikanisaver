@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63CC3BAB22C4A98100977E1C /* WanikaniApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC3BAA22C4A98100977E1C /* WanikaniApi.swift */; };
 		63F34EC222C4750A004FA185 /* WanikaniSaverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F34EC122C4750A004FA185 /* WanikaniSaverView.swift */; };
 		63F34EC522C47650004FA185 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F34EC422C47650004FA185 /* ScreenSaver.framework */; };
 		6D6C3C2C15A7176FF2FC6C91 /* Pods_WanikaniSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2CFDBDA5D560CAB2C531BE3 /* Pods_WanikaniSaver.framework */; };
@@ -14,6 +15,7 @@
 
 /* Begin PBXFileReference section */
 		21E1356B1EDBD23386CF5CEB /* Pods-WanikaniSaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WanikaniSaver.release.xcconfig"; path = "Target Support Files/Pods-WanikaniSaver/Pods-WanikaniSaver.release.xcconfig"; sourceTree = "<group>"; };
+		63CC3BAA22C4A98100977E1C /* WanikaniApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanikaniApi.swift; sourceTree = "<group>"; };
 		63F34EB322C4745A004FA185 /* WanikaniSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WanikaniSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F34EBA22C4745A004FA185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F34EC122C4750A004FA185 /* WanikaniSaverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanikaniSaverView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				63F34EBA22C4745A004FA185 /* Info.plist */,
 				63F34EC122C4750A004FA185 /* WanikaniSaverView.swift */,
+				63CC3BAA22C4A98100977E1C /* WanikaniApi.swift */,
 			);
 			path = WanikaniSaver;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63CC3BAB22C4A98100977E1C /* WanikaniApi.swift in Sources */,
 				63F34EC222C4750A004FA185 /* WanikaniSaverView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
