@@ -6,6 +6,9 @@ target 'WanikaniSaver' do
   use_frameworks!
 
   # Pods for WanikaniSaver
-  pod 'Alamofire', '~> 5.0.0-beta.5'
+  #pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'Alamofire', '~> 4.7.3'
+  pod 'RateLimit', '~> 2.1.2'
+  pod 'SwiftDate', '~> 6.0.3'
+  pod 'SwiftyJSON', '~> 5.0'
 end
-

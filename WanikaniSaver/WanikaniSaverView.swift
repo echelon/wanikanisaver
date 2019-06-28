@@ -16,13 +16,16 @@ import ScreenSaver
 public final class WanikaniSaverView : ScreenSaverView {
     
     private var previousSize: CGSize = .zero
+    private let wanikaniApi: WanikaniApi;
     
     public override init?(frame: NSRect, isPreview: Bool) {
+        wanikaniApi = WanikaniApi.init(api_key: "SECRET_REPLACE_ME");
         super.init(frame: frame, isPreview: isPreview)
-        NSLog("MicroseasonsView CTOR") // NB: Add logging and run from the console to debug MacOS's *frequent* regressions.
+        NSLog("MicroseasonsView CTOR") // NB: Add logging and run from the console to debug MacOS's *frequent* regressions
     }
     
     public required init?(coder: NSCoder) {
+        wanikaniApi = WanikaniApi.init(api_key: "SECRET_REPLACE_ME");
         super.init(coder: coder)
     }
     
@@ -40,7 +43,6 @@ public final class WanikaniSaverView : ScreenSaverView {
     
     public override var animationTimeInterval: TimeInterval {
         get {
-            //return 1 / 60
             return 1 / 60
         }
         
@@ -49,14 +51,13 @@ public final class WanikaniSaverView : ScreenSaverView {
     
     public override func draw(_ rect: NSRect) {
         clearBackground(color: NSColor.white)
-        
-        WanikaniApi.init().update()
+        wanikaniApi.update()
         
         let center = getCenter()
         
         let bbox1 = centeredRectangle(width: 800, height: 200, x: Int(center.x), y: Int(center.y + 100))
         let bbox2 = centeredRectangle(width: 800, height: 200, x: Int(center.x), y: Int(center.y - 120))
-        let bbox3 = centeredRectangle(width: 800, height: 200, x: Int(center.x), y: Int(center.y - 200))
+        // let bbox3 = centeredRectangle(width: 800, height: 200, x: Int(center.x), y: Int(center.y - 200))
         
         /*
          Fonts that work
@@ -66,14 +67,15 @@ public final class WanikaniSaverView : ScreenSaverView {
          - Hannotate SC Regular (must be installed)
          */
         
-        let english = "(test)"
-        
         // Note: This font might get uninstalled via OS upgrades or patches. Check the Font Book and click "Download"!
         let typeface = "Hannotate SC Regular"
         
-        drawText(text: "testing", color: NSColor.black, fontName: typeface, fontSize: 120.0, rect: bbox1)
-        drawText(text: "test test", color: NSColor.gray, fontName: typeface, fontSize: 30.0, rect: bbox2)
-        drawText(text: english, color: NSColor.gray, fontName: typeface, fontSize: 30.0, rect: bbox3)
+        drawText(text: "鰐蟹", color: NSColor.black, fontName: typeface, fontSize: 120.0, rect: bbox1)
+        
+        if let accountState = wanikaniApi.getAccountState() {
+            let text = "\(accountState.immediateReviewCount) reviews"
+            drawText(text: text, color: NSColor.gray, fontName: typeface, fontSize: 30.0, rect: bbox2)
+        }
     }
     
     public override func animateOneFrame() {
